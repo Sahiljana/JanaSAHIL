@@ -1,6 +1,5 @@
 #include <iostream>
-using namespace std;
-creation, insertion 
+using namespace std; 
 class Array
 {
     int n;
