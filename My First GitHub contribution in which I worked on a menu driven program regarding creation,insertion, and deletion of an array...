@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+creation, insertion 
 class Array
 {
     int n;
