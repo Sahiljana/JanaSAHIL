@@ -1,0 +1,118 @@
+#include <iostream>
+using namespace std;
+
+class Array
+{
+    int n;
+    int arr[100];
+
+public:
+    void create()
+    {
+
+        cout << "Enter the size of array";
+        cin >> n;
+        for (int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
+        }
+    }
+    void Display()
+    {
+        cout << "The following Array is:" << endl;
+        for (int i = 0; i < n; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+
+    void Insert()
+    {
+        int position, value;
+        cout << "Enter the position to change";
+        cin >> position;
+        cout << "Enter the element to insert";
+        cin >> value;
+        for (int i = n; i > position; i--)
+        {
+            arr[i] = arr[i - 1];
+        }
+        arr[position] = value;
+        n++;
+
+        cout << "Updated array";
+        for (int i = 0; i < n; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout<<endl;
+    }
+
+    void Delete()
+    {
+        int pos, val;
+        cout << "Enter the position from where you want to delete" << endl;
+        cin >> pos;
+        for (int i = pos; i < n - 1; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+        n--;
+
+        cout << "Updated Array :";
+        for (int i = 0; i < n; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout<<endl;
+    }
+};
+
+int main()
+{
+    Array ob;
+    int x;
+    cout << "Array Menu Driven Programme " << endl;
+    while (true)
+    {
+        cout << "Options" << endl;
+        cout << " 1 -> Create an Array" << endl;
+        cout << " 2 -> Display an Array" << endl;
+        cout << " 3 -> Insert an element in an Array" << endl;
+        cout << " 4 -> Delete an element from an Array" << endl;
+        cout << " 5 -> Exit" << endl;
+
+        cout << "Enter your option: ";
+        cin >> x;
+
+        if (x == 1)
+        {
+            ob.create();
+            cout << "Array created" << endl;
+        }
+        else if (x == 2)
+        {
+            ob.Display();
+        }
+        else if (x == 3)
+        {
+            ob.Insert();
+        }
+        else if (x == 4)
+        {
+            ob.Delete();
+        }
+        else if (x == 5)
+        {
+            cout << "Exiting..." << endl;
+            break;
+        }
+        else
+        {
+            cout << "Wrong Input" << endl;
+        }
+    }
+
+    return 0;
+}
